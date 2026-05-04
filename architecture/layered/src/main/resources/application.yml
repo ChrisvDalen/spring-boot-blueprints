@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: layered-architecture
+  datasource:
+    url: jdbc:h2:mem:layereddb
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  mvc:
+    problemdetails:
+      enabled: true
+
+server:
+  port: 8080
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
