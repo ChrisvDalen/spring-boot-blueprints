@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: pattern-builder
+  mvc:
+    problemdetails:
+      enabled: true
+server:
+  port: 8080
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
