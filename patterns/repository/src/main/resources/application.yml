@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: pattern-repository
+  datasource:
+    url: jdbc:h2:mem:repopatterndb
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+  mvc:
+    problemdetails:
+      enabled: true
+server:
+  port: 8080
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
