@@ -5,9 +5,8 @@ import com.example.eventdriven.event.OrderPlacedEvent;
 import com.example.eventdriven.event.OrderShippedEvent;
 import com.example.eventdriven.model.Order;
 import com.example.eventdriven.model.PlaceOrderRequest;
+import com.example.eventdriven.repository.OrderRepository;
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,10 +30,10 @@ import java.util.UUID;
 @Transactional(readOnly = true)
 public class OrderService {
 
-    private final OrderJpaRepository repository;
+    private final OrderRepository repository;
     private final ApplicationEventPublisher eventPublisher;
 
-    public OrderService(OrderJpaRepository repository, ApplicationEventPublisher eventPublisher) {
+    public OrderService(OrderRepository repository, ApplicationEventPublisher eventPublisher) {
         this.repository = repository;
         this.eventPublisher = eventPublisher;
     }
@@ -84,7 +83,4 @@ public class OrderService {
         eventPublisher.publishEvent(new OrderShippedEvent(saved.getId(), saved.getCustomerEmail(), trackingNumber, Instant.now()));
         return saved;
     }
-
-    @Repository
-    interface OrderJpaRepository extends JpaRepository<Order, String> {}
 }
