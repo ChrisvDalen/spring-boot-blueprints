@@ -10,7 +10,7 @@ When it's missing, every team that integrates with you writes bespoke error-pars
 code. When you change your error shape, you silently break them all.
 
 **RFC 9457 Problem Details** is the IETF standard for HTTP error responses.
-Spring Boot 3 supports it natively. Use it.
+Spring Boot 4 supports it natively. Use it.
 
 ## What RFC 9457 Looks Like
 

@@ -3,10 +3,15 @@ package com.example.errorhandling.advice;
 import com.example.errorhandling.exception.InsufficientStockException;
 import com.example.errorhandling.exception.OrderNotFoundException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.context.request.WebRequest;
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import java.net.URI;
 import java.util.List;
@@ -21,11 +26,11 @@ import java.util.List;
  *
  * Why RFC 9457 ProblemDetail instead of a custom error envelope?
  * - It's an IETF standard — clients and frameworks understand it
- * - Spring Boot 3+ has native ProblemDetail support
+ * - Spring Boot 4 has native ProblemDetail support
  * - The `type` URI lets you document error categories in a stable location
  */
 @RestControllerAdvice
-public class GlobalExceptionHandler {
+public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     private static final String PROBLEM_BASE = "https://example.com/problems";
 
@@ -49,11 +54,15 @@ public class GlobalExceptionHandler {
         return detail;
     }
 
-    // Spring Boot 3 with spring.mvc.problemdetails.enabled=true handles
+    // Spring Boot 4 with spring.mvc.problemdetails.enabled=true handles
     // MethodArgumentNotValidException automatically. This override enriches
     // the response with a structured field-level error list.
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ProblemDetail handleValidation(MethodArgumentNotValidException ex) {
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(
+            MethodArgumentNotValidException ex,
+            HttpHeaders headers,
+            HttpStatusCode status,
+            WebRequest request) {
         List<FieldError> errors = ex.getBindingResult().getFieldErrors().stream()
                 .map(fe -> new FieldError(fe.getField(), fe.getDefaultMessage()))
                 .toList();
@@ -65,7 +74,7 @@ public class GlobalExceptionHandler {
         detail.setType(URI.create(PROBLEM_BASE + "/validation-error"));
         detail.setTitle("Validation Error");
         detail.setProperty("errors", errors);
-        return detail;
+        return handleExceptionInternal(ex, detail, headers, HttpStatus.UNPROCESSABLE_ENTITY, request);
     }
 
     record FieldError(String field, String message) {}
