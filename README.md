@@ -1,11 +1,9 @@
 <!-- GALACTIC SPRING ACADEMY — MAIN DISPATCH -->
 
-[![Build Status](https://img.shields.io/github/actions/workflow/status/chrisvdalen/spring-boot-blueprints/ci.yml?branch=main&style=for-the-badge&logo=github&label=HYPERDRIVE%20BUILD)](https://github.com/chrisvdalen/spring-boot-blueprints/actions)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/chrisvdalen/spring-boot-blueprints/ci.yml?branch=claude%2Fspring-boot-blueprints-setup-UnYFB&style=for-the-badge&logo=github&label=HYPERDRIVE%20BUILD)](https://github.com/chrisvdalen/spring-boot-blueprints/actions)
 [![Java 25](https://img.shields.io/badge/Java-25-orange?style=for-the-badge&logo=openjdk)](https://openjdk.org/projects/jdk/25/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5-brightgreen?style=for-the-badge&logo=spring)](https://spring.io/projects/spring-boot)
-[![Maven 4](https://img.shields.io/badge/Maven-4.x-red?style=for-the-badge&logo=apachemaven)](https://maven.apache.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
-
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1-brightgreen?style=for-the-badge&logo=spring)](https://spring.io/projects/spring-boot)
+[![Maven 4](https://img.shields.io/badge/Maven-4.0.0--rc--6-red?style=for-the-badge&logo=apachemaven)](https://maven.apache.org/)
 ---
 
 ```
@@ -279,7 +277,7 @@
 | Technology | Version | Role |
 |------------|---------|------|
 | Java | 25 | The language of the Jedi |
-| Spring Boot | 3.5.x | The Force that binds us |
+| Spring Boot | 4.1.x | The Force that binds us |
 | Maven | 4.x | The Senate's build system |
 | JUnit 5 | latest | The testing crystal |
 | Mockito | latest | The illusion master |
