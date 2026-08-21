@@ -8,31 +8,25 @@ import com.example.eventdriven.service.OrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.context.event.EventListener;
-import org.springframework.stereotype.Component;
-import org.springframework.test.context.bean.override.mockito.MockitoSpyBean;
+import org.springframework.test.context.event.ApplicationEvents;
+import org.springframework.test.context.event.RecordApplicationEvents;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.verify;
 
 @SpringBootTest
+@RecordApplicationEvents
 class OrderEventTest {
 
     @Autowired OrderService orderService;
-    @MockitoSpyBean ApplicationEventPublisher publisher;
+    @Autowired ApplicationEvents applicationEvents;
 
     @Test
     void placeOrder_publishesOrderPlacedEvent() {
         var request = new PlaceOrderRequest("luke@jedi.org", "LIGHTSABER", 1, new BigDecimal("299.99"));
         orderService.place(request);
 
-        verify(publisher).publishEvent(any(OrderPlacedEvent.class));
+        assertThat(applicationEvents.stream(OrderPlacedEvent.class)).hasSize(1);
     }
 
     @Test
@@ -41,7 +35,7 @@ class OrderEventTest {
         Order placed = orderService.place(request);
         orderService.confirm(placed.getId());
 
-        verify(publisher).publishEvent(any(OrderConfirmedEvent.class));
+        assertThat(applicationEvents.stream(OrderConfirmedEvent.class)).hasSize(1);
     }
 
     @Test
