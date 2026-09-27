@@ -1,9 +1,0 @@
-/workspace/project/spring-boot-blueprints/api-design/rest-conventions/src/main/java/com/example/restconventions/RestConventionsApplication.java
-/workspace/project/spring-boot-blueprints/api-design/rest-conventions/src/main/java/com/example/restconventions/controller/AntiPatternArticleController.java
-/workspace/project/spring-boot-blueprints/api-design/rest-conventions/src/main/java/com/example/restconventions/controller/ArticleController.java
-/workspace/project/spring-boot-blueprints/api-design/rest-conventions/src/main/java/com/example/restconventions/exception/ArticleNotFoundException.java
-/workspace/project/spring-boot-blueprints/api-design/rest-conventions/src/main/java/com/example/restconventions/exception/GlobalExceptionHandler.java
-/workspace/project/spring-boot-blueprints/api-design/rest-conventions/src/main/java/com/example/restconventions/model/Article.java
-/workspace/project/spring-boot-blueprints/api-design/rest-conventions/src/main/java/com/example/restconventions/model/CreateArticleRequest.java
-/workspace/project/spring-boot-blueprints/api-design/rest-conventions/src/main/java/com/example/restconventions/model/UpdateArticleRequest.java
-/workspace/project/spring-boot-blueprints/api-design/rest-conventions/src/main/java/com/example/restconventions/service/ArticleService.java

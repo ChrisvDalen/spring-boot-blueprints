@@ -1,0 +1,34 @@
+# Build output
+target/
+*.jar
+!**/mvnw
+*.class
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+.flattened-pom.xml
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+.factorypath
+.apt_generated/
+.qoder/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Local env
+.env
+.env.local
