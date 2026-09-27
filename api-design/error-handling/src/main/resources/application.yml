@@ -1,13 +1,27 @@
 spring:
   application:
     name: error-handling
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
   mvc:
     problemdetails:
       enabled: true
 
 server:
   port: 8080
+  shutdown: graceful
 
+management:
+  endpoints:
+    web:
+      # Only health/info are exposed - no env, beans, metrics, or other
+      # introspection endpoints. Enough for container liveness/readiness probes.
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+      show-components: never
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
