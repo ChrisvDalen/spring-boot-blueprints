@@ -173,12 +173,14 @@
 | Sector | Module | The Force Within |
 |--------|--------|-----------------|
 | 🏛️ **Architecture** | [`architecture/`](architecture/) | Layered, Hexagonal, Event-Driven patterns |
-| ⚔️ **The Jedi Pattern Archives** | [`patterns/`](patterns/) | Repository, Factory, Strategy, Builder |
-| 🛡️ **The Republic Modules** | [`modules/`](modules/) | Security, Data, Messaging, Caching, Scheduling |
-| 🧪 **The Testing Holocron** | [`testing/`](testing/) | Unit, Integration, Mocking, Test Slices |
+| ⚔️ **The Jedi Pattern Archives** | `patterns/` | Repository, Factory, Strategy, Builder — *planned* |
+| 🛡️ **The Republic Modules** | `modules/` | Security, Data, Messaging, Caching, Scheduling — *planned* |
+| 🧪 **The Testing Holocron** | `testing/` | Unit, Integration, Mocking, Test Slices — *planned* |
 | 📡 **Galactic Senate API Standards** | [`api-design/`](api-design/) | REST conventions, Error handling, Validation, OpenAPI |
-| 🔭 **The Observatory** | [`observability/`](observability/) | Logging, Metrics, Tracing |
-| 🌐 **The Outer Rim Fullstack** | [`fullstack/`](fullstack/) | CORS, Angular codegen, Auth flows, Reactive updates |
+| 🔭 **The Observatory** | `observability/` | Logging, Metrics, Tracing — *planned* |
+| 🌐 **The Outer Rim Fullstack** | `fullstack/` | CORS, Angular codegen, Auth flows, Reactive updates — *planned* |
+
+_Sectors marked **planned** do not yet exist in the repository._
 
 ---
 
@@ -198,6 +200,8 @@
 
 > *"These are the ancient scrolls of the Pattern Masters. Read them. Understand them. Use them wisely."*
 
+_**Planned sector** — not yet in the repository. The paths below are the intended layout._
+
 | Pattern | Path | The Lesson |
 |---------|------|------------|
 | Repository | [`patterns/repository/`](patterns/repository/) | Separate your data access from your domain logic |
@@ -210,6 +214,8 @@
 ## 🛡️ The Republic Modules
 
 > *"The Senate's infrastructure. Without it, the galaxy would fall to chaos... and OutOfMemoryErrors."*
+
+_**Planned sector** — not yet in the repository. The paths below are the intended layout._
 
 | Module | Path | Powers Granted |
 |--------|------|---------------|
@@ -224,6 +230,8 @@
 ## 🧪 The Testing Holocron
 
 > *"A Jedi's strength flows from the test suite. But beware of the mock side — mocking too much leads to tests that lie."*
+
+_**Planned sector** — not yet in the repository. The paths below are the intended layout._
 
 | Module | Path | Wisdom |
 |--------|------|--------|
@@ -251,6 +259,8 @@
 
 > *"Through the lens of observability, no bug shall hide in the darkness."*
 
+_**Planned sector** — not yet in the repository. The paths below are the intended layout._
+
 | Module | Path | Vision |
 |--------|------|--------|
 | Logging | [`observability/logging/`](observability/logging/) | Structured logs, MDC context, log levels |
@@ -262,6 +272,8 @@
 ## 🌐 The Outer Rim — Fullstack Frontier
 
 > *"Beyond the core systems lies the frontier — where backend meets frontend, and dragons live. These are the brave patterns of the Outer Rim."*
+
+_**Planned sector** — not yet in the repository. The paths below are the intended layout._
 
 | Module | Path | The Mission |
 |--------|------|------------|
