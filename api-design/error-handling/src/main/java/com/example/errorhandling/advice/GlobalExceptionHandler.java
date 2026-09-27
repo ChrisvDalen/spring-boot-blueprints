@@ -2,6 +2,8 @@ package com.example.errorhandling.advice;
 
 import com.example.errorhandling.exception.InsufficientStockException;
 import com.example.errorhandling.exception.OrderNotFoundException;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -23,8 +25,15 @@ import java.util.List;
  * - It's an IETF standard — clients and frameworks understand it
  * - Spring Boot 3+ has native ProblemDetail support
  * - The `type` URI lets you document error categories in a stable location
+ *
+ * Why @Order(HIGHEST_PRECEDENCE)?
+ * When spring.mvc.problemdetails.enabled=true, the framework registers its own
+ * ProblemDetailsExceptionHandler (ordered at 0) which would otherwise win for
+ * MethodArgumentNotValidException and return a generic 400 instead of our
+ * 422 + field-level errors. Ordering this advice first makes it win.
  */
 @RestControllerAdvice
+@Order(Ordered.HIGHEST_PRECEDENCE)
 public class GlobalExceptionHandler {
 
     private static final String PROBLEM_BASE = "https://example.com/problems";
