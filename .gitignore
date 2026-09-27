@@ -2,10 +2,10 @@
 target/
 *.jar
 !**/mvnw
+!**/.mvn/wrapper/maven-wrapper.jar
 *.class
 
 # Maven
-.mvn/wrapper/maven-wrapper.jar
 .flattened-pom.xml
 
 # IDE
