@@ -1,0 +1,9 @@
+com/example/restconventions/model/CreateArticleRequest.class
+com/example/restconventions/controller/AntiPatternArticleController.class
+com/example/restconventions/service/ArticleService.class
+com/example/restconventions/exception/GlobalExceptionHandler.class
+com/example/restconventions/controller/ArticleController.class
+com/example/restconventions/model/UpdateArticleRequest.class
+com/example/restconventions/exception/ArticleNotFoundException.class
+com/example/restconventions/model/Article.class
+com/example/restconventions/RestConventionsApplication.class

@@ -1,0 +1,12 @@
+/workspace/project/spring-boot-blueprints/architecture/hexagonal/src/main/java/com/example/hexagonal/HexagonalApplication.java
+/workspace/project/spring-boot-blueprints/architecture/hexagonal/src/main/java/com/example/hexagonal/adapter/in/web/OrderController.java
+/workspace/project/spring-boot-blueprints/architecture/hexagonal/src/main/java/com/example/hexagonal/adapter/in/web/OrderResponse.java
+/workspace/project/spring-boot-blueprints/architecture/hexagonal/src/main/java/com/example/hexagonal/adapter/in/web/PlaceOrderRequest.java
+/workspace/project/spring-boot-blueprints/architecture/hexagonal/src/main/java/com/example/hexagonal/adapter/out/persistence/OrderJpaEntity.java
+/workspace/project/spring-boot-blueprints/architecture/hexagonal/src/main/java/com/example/hexagonal/adapter/out/persistence/OrderJpaRepository.java
+/workspace/project/spring-boot-blueprints/architecture/hexagonal/src/main/java/com/example/hexagonal/adapter/out/persistence/OrderPersistenceAdapter.java
+/workspace/project/spring-boot-blueprints/architecture/hexagonal/src/main/java/com/example/hexagonal/application/OrderService.java
+/workspace/project/spring-boot-blueprints/architecture/hexagonal/src/main/java/com/example/hexagonal/domain/model/Order.java
+/workspace/project/spring-boot-blueprints/architecture/hexagonal/src/main/java/com/example/hexagonal/domain/port/in/ManageOrderUseCase.java
+/workspace/project/spring-boot-blueprints/architecture/hexagonal/src/main/java/com/example/hexagonal/domain/port/in/PlaceOrderUseCase.java
+/workspace/project/spring-boot-blueprints/architecture/hexagonal/src/main/java/com/example/hexagonal/domain/port/out/OrderRepository.java

@@ -1,0 +1,8 @@
+/workspace/project/spring-boot-blueprints/api-design/error-handling/src/main/java/com/example/errorhandling/ErrorHandlingApplication.java
+/workspace/project/spring-boot-blueprints/api-design/error-handling/src/main/java/com/example/errorhandling/advice/GlobalExceptionHandler.java
+/workspace/project/spring-boot-blueprints/api-design/error-handling/src/main/java/com/example/errorhandling/controller/AntiPatternOrderController.java
+/workspace/project/spring-boot-blueprints/api-design/error-handling/src/main/java/com/example/errorhandling/controller/OrderController.java
+/workspace/project/spring-boot-blueprints/api-design/error-handling/src/main/java/com/example/errorhandling/exception/InsufficientStockException.java
+/workspace/project/spring-boot-blueprints/api-design/error-handling/src/main/java/com/example/errorhandling/exception/OrderNotFoundException.java
+/workspace/project/spring-boot-blueprints/api-design/error-handling/src/main/java/com/example/errorhandling/model/Order.java
+/workspace/project/spring-boot-blueprints/api-design/error-handling/src/main/java/com/example/errorhandling/model/PlaceOrderRequest.java

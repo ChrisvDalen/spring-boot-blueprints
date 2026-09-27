@@ -1,0 +1,11 @@
+/workspace/project/spring-boot-blueprints/architecture/event-driven/src/main/java/com/example/eventdriven/EventDrivenApplication.java
+/workspace/project/spring-boot-blueprints/architecture/event-driven/src/main/java/com/example/eventdriven/controller/OrderController.java
+/workspace/project/spring-boot-blueprints/architecture/event-driven/src/main/java/com/example/eventdriven/event/OrderConfirmedEvent.java
+/workspace/project/spring-boot-blueprints/architecture/event-driven/src/main/java/com/example/eventdriven/event/OrderPlacedEvent.java
+/workspace/project/spring-boot-blueprints/architecture/event-driven/src/main/java/com/example/eventdriven/event/OrderShippedEvent.java
+/workspace/project/spring-boot-blueprints/architecture/event-driven/src/main/java/com/example/eventdriven/listener/AuditListener.java
+/workspace/project/spring-boot-blueprints/architecture/event-driven/src/main/java/com/example/eventdriven/listener/InventoryListener.java
+/workspace/project/spring-boot-blueprints/architecture/event-driven/src/main/java/com/example/eventdriven/listener/NotificationListener.java
+/workspace/project/spring-boot-blueprints/architecture/event-driven/src/main/java/com/example/eventdriven/model/Order.java
+/workspace/project/spring-boot-blueprints/architecture/event-driven/src/main/java/com/example/eventdriven/model/PlaceOrderRequest.java
+/workspace/project/spring-boot-blueprints/architecture/event-driven/src/main/java/com/example/eventdriven/service/OrderService.java

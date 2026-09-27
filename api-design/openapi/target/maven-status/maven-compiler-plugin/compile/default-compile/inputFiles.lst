@@ -1,0 +1,6 @@
+/workspace/project/spring-boot-blueprints/api-design/openapi/src/main/java/com/example/openapi/OpenApiApplication.java
+/workspace/project/spring-boot-blueprints/api-design/openapi/src/main/java/com/example/openapi/config/OpenApiConfig.java
+/workspace/project/spring-boot-blueprints/api-design/openapi/src/main/java/com/example/openapi/controller/ProductController.java
+/workspace/project/spring-boot-blueprints/api-design/openapi/src/main/java/com/example/openapi/model/CreateProductRequest.java
+/workspace/project/spring-boot-blueprints/api-design/openapi/src/main/java/com/example/openapi/model/PagedResponse.java
+/workspace/project/spring-boot-blueprints/api-design/openapi/src/main/java/com/example/openapi/model/Product.java
