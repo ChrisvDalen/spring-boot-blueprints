@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+          cache: maven
+
+      - name: Build all modules and run tests
+        run: ./mvnw -B clean verify
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: |
+            api-design/*/target/surefire-reports/*.xml
+            architecture/*/target/surefire-reports/*.xml
+          if-no-files-found: ignore
+
+      - name: Upload coverage reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-reports
+          path: |
+            api-design/*/target/site/jacoco/index.html
+            architecture/*/target/site/jacoco/index.html
+          if-no-files-found: ignore
+
+  dependency-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+          cache: maven
+
+      - name: OWASP dependency-check (report only)
+        # Report-only by design: the NVD feed download is slow and occasionally
+        # rate-limited, so a scan failure must not block the build. The report
+        # artifact is uploaded for human review on every run.
+        continue-on-error: true
+        run: |
+          ./mvnw -B \
+            org.owasp:dependency-check-maven:12.2.3:check \
+            -DfailOnError=false \
+            -DoutputDirectory=target/dependency-check
+
+      - name: Upload dependency-check report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-check-report
+          path: |
+            target/dependency-check/**
+            api-design/*/target/dependency-check/**
+            architecture/*/target/dependency-check/**
+          if-no-files-found: warn

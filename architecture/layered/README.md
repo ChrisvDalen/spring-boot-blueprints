@@ -79,8 +79,19 @@ thousands of lines, consider migrating toward hexagonal architecture.
 ```bash
 ./mvnw spring-boot:run
 # Swagger UI: http://localhost:8080/swagger-ui.html
-# H2 Console: http://localhost:8080/h2-console (jdbc:h2:mem:layereddb)
+# Health check: http://localhost:8080/actuator/health
 ```
+
+### H2 Console (local development only)
+
+The H2 web console is disabled by default. To open it, run with the `dev` profile:
+
+```bash
+./mvnw spring-boot:run -Dspring-boot.run.profiles=dev
+# H2 Console: http://localhost:8080/h2-console (JDBC URL: jdbc:h2:mem:layereddb)
+```
+
+Do **not** enable the console in production — it has no authentication.
 
 ## Running Tests
 
