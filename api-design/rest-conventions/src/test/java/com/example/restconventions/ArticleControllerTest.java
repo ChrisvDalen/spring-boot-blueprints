@@ -1,6 +1,7 @@
 package com.example.restconventions;
 
 import com.example.restconventions.model.CreateArticleRequest;
+import com.example.restconventions.model.UpdateArticleRequest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,5 +68,55 @@ class ArticleControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(badJson))
                 .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void patchArticle_updatesOnlyProvidedFields() throws Exception {
+        var request = new CreateArticleRequest("Original Title", "original body", "author-x");
+        MvcResult created = mockMvc.perform(post("/articles")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isCreated())
+                .andReturn();
+        String location = created.getResponse().getHeader("Location");
+        String id = location.substring(location.lastIndexOf('/') + 1);
+
+        // Partial update: only title provided — body must be preserved
+        var patch = new UpdateArticleRequest("Patched Title", null);
+        mockMvc.perform(patch("/articles/" + id)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(patch)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.title").value("Patched Title"))
+                .andExpect(jsonPath("$.body").value("original body"));
+    }
+
+    @Test
+    void patchArticle_notFound_returns404ProblemDetail() throws Exception {
+        var patch = new UpdateArticleRequest("New title", null);
+        mockMvc.perform(patch("/articles/999999")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(patch)))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    void deleteArticle_notFound_returns404ProblemDetail() throws Exception {
+        mockMvc.perform(delete("/articles/999999"))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    void listArticles_returnsCollectionArray() throws Exception {
+        var request = new CreateArticleRequest("Listed Article", "body", "author-l");
+        mockMvc.perform(post("/articles")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isCreated());
+
+        mockMvc.perform(get("/articles"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", org.hamcrest.Matchers.hasItem(
+                        org.hamcrest.Matchers.hasEntry("title", "Listed Article"))));
     }
 }

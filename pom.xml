@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>spring-boot-blueprints</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>spring-boot-blueprints</name>
+    <description>Aggregator for the Spring Boot blueprint modules</description>
+
+    <modules>
+        <module>api-design/rest-conventions</module>
+        <module>api-design/error-handling</module>
+        <module>api-design/validation</module>
+        <module>api-design/openapi</module>
+        <module>architecture/layered</module>
+        <module>architecture/hexagonal</module>
+        <module>architecture/event-driven</module>
+    </modules>
+</project>
