@@ -14,7 +14,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>event-driven-architecture</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>event-driven-architecture</name>
     <description>Blueprint: Event-driven architecture with Spring Application Events</description>
 
