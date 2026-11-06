@@ -12,7 +12,7 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>pattern-repository</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>pattern-repository</name>
     <description>Blueprint: Repository pattern — decouple domain from data access</description>
     <properties>

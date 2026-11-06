@@ -14,7 +14,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>hexagonal-architecture</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>hexagonal-architecture</name>
     <description>Blueprint: Hexagonal architecture (Ports and Adapters)</description>
 

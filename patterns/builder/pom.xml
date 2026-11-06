@@ -12,7 +12,7 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>pattern-builder</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>pattern-builder</name>
     <description>Blueprint: Builder pattern — step-by-step complex object construction</description>
     <properties>

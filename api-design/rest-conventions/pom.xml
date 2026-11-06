@@ -14,7 +14,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>rest-conventions</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>rest-conventions</name>
     <description>Blueprint: REST naming, HTTP verbs, and status code conventions</description>
 

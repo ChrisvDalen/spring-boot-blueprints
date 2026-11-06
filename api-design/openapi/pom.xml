@@ -14,7 +14,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>openapi</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>openapi</name>
     <description>Blueprint: Springdoc OpenAPI, annotations, and contract-first documentation</description>
 
